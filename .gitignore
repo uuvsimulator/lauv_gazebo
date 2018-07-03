@@ -1,0 +1,11 @@
+*~
+*.pyc
+*.swp
+
+# IDEs
+.vscode
+.idea
+.ropeproject
+
+# Misc
+.clang_complete

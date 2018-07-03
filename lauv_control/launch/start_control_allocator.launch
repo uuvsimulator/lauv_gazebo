@@ -1,0 +1,17 @@
+<launch>
+    <include file="$(find uuv_auv_control_allocator)/launch/start_control_allocator.launch">        
+        <arg name="uuv_name" value="lauv"/>
+        <arg name="output_dir" value="$(find lauv_control)/config"/>
+        <arg name="base_link" value="base_link"/>
+        <arg name="max_thrust" value="20"/>
+        <arg name="thruster_conversion_fcn" value="proportional"/>
+        <arg name="thruster_gain" value="0.000049"/>
+        <arg name="fluid_density" value="1028.0"/>
+        <arg name="lift_coefficient" value="3.0"/>
+        <arg name="fin_area" value="0.0064"/>
+        <arg name="fin_lower_joint_limit" value="-1.396263402"/>
+        <arg name="fin_upper_joint_limit" value="1.396263402"/>
+        <arg name="timeout" value="-1"/>
+        <arg name="update_rate" value="10"/>
+    </include>
+</launch>

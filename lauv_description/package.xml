@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<package format="2">
+  <name>lauv_description</name>
+  <version>0.1.0</version>
+  <description>Robot description files for the LAUV.</description>
+
+  <maintainer email="musa.marcusso@de.bosch.com">Musa Morena Marcusso Manhaes</maintainer>
+
+  <author email="musa.marcusso@de.bosch.com">Musa Morena Marcusso Manhaes</author>
+
+  <license>Apache-2.0</license>
+
+  <exec_depend>uuv_gazebo_ros_plugins</exec_depend>
+  <exec_depend>uuv_sensor_ros_plugins</exec_depend>
+
+  <buildtool_depend>catkin</buildtool_depend>
+
+</package>

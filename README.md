@@ -10,7 +10,7 @@ The information about the vehicle dynamic model and physical dimensions were ret
 sources:
 
 * [Sousa, Alexandre, et al. "LAUV: The man-portable autonomous underwater vehicle." IFAC Proceedings Volumes 45.5 (2012): 268-274.](https://www.sciencedirect.com/science/article/pii/S1474667016306140)
-* [da Silva, Jorge Estrela, et al. "Modeling and simulation of the lauv autonomous underwater vehicle." 13th IEEE IFAC International Conference on Methods and Models in Automation and Robotics. Szczecin, Poland Szczecin, Poland, 2007.](http://ave.dee.isep.ipp.pt/~jes/english/publications/mmar07.pdf)
+* [da Silva, Jorge Estrela, et al. "Modeling and simulation of the LAUV autonomous underwater vehicle." 13th IEEE IFAC International Conference on Methods and Models in Automation and Robotics. Szczecin, Poland Szczecin, Poland, 2007.](http://ave.dee.isep.ipp.pt/~jes/english/publications/mmar07.pdf)
 
 ![LAUV](lauv.png)
 

@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<package format="2">
+  <name>lauv_gazebo</name>
+  <version>0.1.0</version>
+  <description>Sample launch files to start a simulated LAUV in Gazebo.</description>
+
+  <maintainer email="musa.marcusso@de.bosch.com">Musa Morena Marcusso Manhaes</maintainer>
+
+  <author email="musa.marcusso@de.bosch.com">Musa Morena Marcusso Manhaes</author>
+
+  <license>Apache-2.0</license>
+
+  <exec_depend>lauv_description</exec_depend>
+  <exec_depend>lauv_control</exec_depend>
+  <exec_depend>uuv_control_utils</exec_depend>
+  <exec_depend>rosbag</exec_depend>
+
+  <buildtool_depend>catkin</buildtool_depend>
+
+</package>
