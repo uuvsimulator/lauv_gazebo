@@ -1,0 +1,78 @@
+<launch>
+    <arg name="uuv_name" default="lauv"/>
+    <arg name="gui_on" default="true"/>
+
+    <arg name="use_ned_frame" default="false"/>
+    <arg name="max_forward_speed" default="2"/>
+    <arg name="look_ahead_delay" default="0.1"/>
+
+    <arg name="teleop_on" default="false"/>
+    <arg name="joy_id" default="0"/>
+    <arg name="axis_yaw" default="0"/>
+    <arg name="axis_x" default="4"/>
+    <arg name="axis_y" default="3"/>
+    <arg name="axis_z" default="1"/>
+
+    <arg name="dubins_radius" default="9"/>
+    <arg name="dubins_max_pitch" default="0.26"/>
+
+    <arg name="Kd" default="24.328999405818507,95.16574836816616,25.943377407248825,0,6.388371356010936,79.2844976871164"/>
+    <arg name="Ki" default="0.0010232768152540483,0.0010232768152540483,0.0010232768152540483,0,0.11901644069756079,0.11901644069756079"/>
+    <arg name="slope" default="0.9903858668992097,0.9903858668992097,0.9903858668992097,0,0.20796465986893387,0.20796465986893387"/>
+
+    <include file="$(find lauv_control)/launch/start_control_allocator.launch"/>
+
+    <group ns="$(arg uuv_name)">
+      <node pkg="uuv_trajectory_control"
+            type="rov_nmb_sm_controller.py"
+            name="rov_nmb_sm_controller"
+            output="screen"
+            if="$(arg use_ned_frame)">
+        <!-- Remap necessary topics -->
+        <remap from="odom" to="pose_gt_ned"/>
+        <remap from="thruster_output" to="thruster_manager/input_stamped"/>
+        <remap from="auv_command_output" to="control_allocation/control_input"/>
+        <!-- Controller parameters -->
+        <rosparam subst_value="true">
+          saturation: 20
+          thrusters_only: false
+          Kd: [$(arg Kd)]
+          Ki: [$(arg Ki)]
+          slope: [$(arg slope)]
+          inertial_frame_id: world_ned
+          max_forward_speed: $(arg max_forward_speed)
+          use_stamped_poses_only: false
+          look_ahead_delay: $(arg look_ahead_delay)
+          dubins: 
+            radius: $(arg dubins_radius)
+            max_pitch: $(arg dubins_max_pitch)
+        </rosparam>
+      </node>
+
+      <node pkg="uuv_trajectory_control"
+            type="rov_nmb_sm_controller.py"
+            name="rov_nmb_sm_controller"
+            output="screen"
+            unless="$(arg use_ned_frame)">
+        <!-- Remap necessary topics -->
+        <remap from="odom" to="pose_gt"/>
+        <remap from="thruster_output" to="thruster_manager/input_stamped"/>
+        <remap from="auv_command_output" to="control_allocation/control_input"/>
+        <!-- Controller parameters -->
+        <rosparam subst_value="true">
+          saturation: 20
+          thrusters_only: false
+          Kd: [$(arg Kd)]
+          Ki: [$(arg Ki)]
+          slope: [$(arg slope)]
+          inertial_frame_id: world
+          max_forward_speed: $(arg max_forward_speed)
+          use_stamped_poses_only: false
+          look_ahead_delay: $(arg look_ahead_delay)
+          dubins: 
+            radius: $(arg dubins_radius)
+            max_pitch: $(arg dubins_max_pitch)
+        </rosparam>
+      </node>
+    </group>    
+</launch>

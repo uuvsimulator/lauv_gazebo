@@ -1,0 +1,86 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+    <!-- Center of buoyancy -->
+    <xacro:property name="lauv_cob" value="0 0 0.01"/>
+
+    <!-- Vehicle's actual volume (Gazebo cannot compute the volume out of the mesh) -->
+    <xacro:property name="lauv_volume" value="0.017551374956865266"/>
+
+    <!-- Describing the dimensions of the vehicle's bounding box -->
+    <xacro:property name="lauv_length" value="1.08"/>
+    <xacro:property name="lauv_width"  value="0.15"/>
+    <xacro:property name="lauv_radius"  value="${0.5 * lauv_width}"/>
+    <xacro:property name="lauv_height" value="0.15"/>
+
+    <xacro:macro name="lauv_hydro_model" params="namespace">
+      <!-- List of hydrodynamic models this robot's links -->
+      <link name="${namespace}/base_link">
+        <!-- This flag will make the link neutrally buoyant -->
+        <neutrally_buoyant>0</neutrally_buoyant>
+
+        <!-- Link's volume -->
+        <volume>${lauv_volume}</volume>
+
+        <!-- Link's bounding box, it is used to recalculate the immersed
+        volume when close to the surface.
+        This is a workaround the invalid bounding box given by Gazebo-->
+        <box>
+          <width>${lauv_width}</width>
+          <length>${lauv_length}</length>
+          <height>${lauv_height}</height>
+        </box>
+
+        <!-- Center of buoyancy -->
+        <center_of_buoyancy>${lauv_cob}</center_of_buoyancy>
+
+        <!-- 1) Fossen's equation of motion -->
+        <hydrodynamic_model>
+          <type>fossen</type>
+          <added_mass>
+            1     0     0     0     0     0
+            0     16    0     0     0     0
+            0     0     16    0     0     0
+            0     0     0     0.005 0     0
+            0     0     0     0     1.3   0
+            0     0     0     0     0     1.3
+          </added_mass>
+          <!--
+            The linear damping coefficients can be provided as a diagonal (6 elements)
+            or a full matrix (36 coefficients), like the added-mass coefficients above
+          -->
+          <linear_damping>
+            -2.4  0     0     0     0     0
+            0     -23   0     0     0     11.5
+            0     0     -23   0     -11.5 0
+            0     0     0     -0.3  0     0
+            0     0     3.1   0     -9.7  0
+            0     -3.1  0     0     0     -9.7
+          </linear_damping>
+          <!--
+            The linear damping coefficients proportional to the forward speed
+            can be provided as a diagonal (6 elements) or a full matrix (36 coefficients),
+            like the added-mass coefficients above.
+            This matrix is mostly useful for slender bodies (e.g. AUVs with torpedo shape)
+          -->
+          <linear_damping_forward_speed>
+            0 0 0 0 0 0
+          </linear_damping_forward_speed>
+          <!--
+            The quadratic damping coefficients can be provided as a diagonal (6 elements)
+            or a full matrix (36 coefficients), like the added-mass coefficients above
+          -->
+          <quadratic_damping>
+            -2.4   0      0      0       0      0
+            0      -80    0      0       0      0.3
+            0      0      -80    0       -0.3   0
+            0      0      0      -0.0006 0      0
+            0      0      1.5    0       -9.1   0
+            0      -1.5   0      0       0      -9.1
+          </quadratic_damping>
+        </hydrodynamic_model>
+
+      </link>
+    </xacro:macro>
+
+</robot>

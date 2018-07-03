@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<package format="2">
+  <name>lauv_control</name>
+  <version>0.1.0</version>
+  <description>Collection of configuration and launch files to start controllers for the LAUV.</description>
+
+  <maintainer email="musa.marcusso@de.bosch.com">Musa Morena Marcusso Manhaes</maintainer>
+
+  <author email="musa.marcusso@de.bosch.com">Musa Morena Marcusso Manhaes</author>
+
+  <license>Apache-2.0</license>
+
+  <buildtool_depend>catkin</buildtool_depend>
+
+  <exec_depend>uuv_teleop</exec_depend>
+  <exec_depend>uuv_control_utils</exec_depend>
+  <exec_depend>uuv_trajectory_control</exec_depend>
+  <exec_depend>uuv_auv_control_allocator</exec_depend>
+  <exec_depend>lauv_description</exec_depend>
+</package>

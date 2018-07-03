@@ -1,0 +1,22 @@
+<launch>
+  <!-- Vehicle's initial position -->
+  <arg name="x" default="0"/>
+  <arg name="y" default="0"/>
+  <arg name="z" default="-5"/>
+  <arg name="yaw" default="0"/>
+
+  <arg name="joy_id" default="0"/>
+
+  <include file="$(find lauv_description)/launch/upload.launch">
+    <arg name="x" value="$(arg x)"/>
+    <arg name="y" value="$(arg y)"/>
+    <arg name="z" value="$(arg z)"/>
+    <arg name="yaw" value="$(arg yaw)"/>
+  </include>
+
+  <include file="$(find lauv_control)/launch/start_auv_teleop.launch">
+    <arg name="joy_id" default="$(arg joy_id)"/>
+  </include>
+
+  <node name="rviz" pkg="rviz" type="rviz" output="screen" args="-d $(find lauv_gazebo)/rviz/lauv_teleop.rviz"/>
+</launch>
