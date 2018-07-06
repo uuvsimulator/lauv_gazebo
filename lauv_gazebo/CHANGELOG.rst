@@ -2,9 +2,16 @@
 Changelog for package lauv_gazebo
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* ADD GT controller demo launch file
+  Signed-off-by: Musa Morena Marcusso Manhaes <Musa.Marcusso@de.bosch.com>
+* Contributors: Musa Morena Marcusso Manhaes, Musa Morena Marcusso Manhães
+
 0.1.2 (2018-07-05)
 ------------------
 * ADD Information to Gazebo world configuration to README file
+* Contributors: Musa Morena Marcusso Manhaes, Musa Morena Marcusso Manhães
 
 0.1.1 (2018-07-04)
 ------------------
