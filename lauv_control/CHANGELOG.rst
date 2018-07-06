@@ -2,8 +2,8 @@
 Changelog for package lauv_control
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+0.1.3 (2018-07-06)
+------------------
 * FIX Visualizatin of wrench markers
   Signed-off-by: Musa Morena Marcusso Manhaes <Musa.Marcusso@de.bosch.com>
 * FIX GT controller parameters
