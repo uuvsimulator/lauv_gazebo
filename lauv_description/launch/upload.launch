@@ -19,6 +19,8 @@
   <arg name="longitude_ref" default="0"/>
   <arg name="altitude_ref" default="0"/>
 
+  <arg name="use_ned_frame" default="true"/>
+
   <!-- Mode to open different robot configurations as set the in file
   nomenclature standard for the files in /robots
 
@@ -29,12 +31,22 @@
   <!-- Vehicle's namespace -->
   <arg name="namespace" default="lauv"/>
 
-  <arg name="world_frame" default="world"/>
-
-
   <group ns="$(arg namespace)">
-    <param name="robot_description"
-           command="$(find xacro)/xacro --inorder '$(find lauv_description)/robots/$(arg mode).xacro' debug:=$(arg debug) namespace:=$(arg namespace)" />
+    <group if="$(arg use_ned_frame)">
+      <param name="robot_description"
+             command="$(find xacro)/xacro '$(find lauv_description)/robots/$(arg mode).xacro' --inorder
+                      debug:=$(arg debug)
+                      namespace:=$(arg namespace)
+                      inertial_reference_frame:=world_ned" />
+    </group>
+
+    <group unless="$(arg use_ned_frame)">
+      <param name="robot_description"
+             command="$(find xacro)/xacro '$(find lauv_description)/robots/$(arg mode).xacro' --inorder
+                      debug:=$(arg debug)
+                      namespace:=$(arg namespace)
+                      inertial_reference_frame:=world" />
+    </group>
 
     <!-- Run a python script to the send a service call to gazebo_ros to spawn a URDF robot -->
     <group if="$(arg use_geodetic)">
