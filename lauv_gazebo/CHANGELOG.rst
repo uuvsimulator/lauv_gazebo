@@ -2,6 +2,9 @@
 Changelog for package lauv_gazebo
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+
 0.1.3 (2018-07-06)
 ------------------
 * ADD GT controller demo launch file
