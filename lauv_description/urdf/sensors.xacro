@@ -12,7 +12,10 @@
   <xacro:default_gps namespace="${namespace}" parent_link="${namespace}/base_link" />
 
   <!-- Mount a Pose 3D sensor. -->
-  <xacro:default_pose_3d namespace="${namespace}" parent_link="${namespace}/base_link" />
+  <xacro:default_pose_3d_macro
+    namespace="${namespace}"
+    parent_link="${namespace}/base_link"
+    inertial_reference_frame="${inertial_reference_frame}" />
 
   <!-- Forward-looking sonar sensor -->
   <!-- <xacro:forward_multibeam_p900 namespace="${namespace}" parent_link="${namespace}/base_link">

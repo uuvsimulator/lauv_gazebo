@@ -5,7 +5,7 @@
   <!-- Loading file with sensor macros -->
   <xacro:include filename="$(find uuv_sensor_ros_plugins)/urdf/sensor_snippets.xacro"/>
   <!-- Loading the UUV simulator ROS plugin macros -->
-  <xacro:include filename="$(find uuv_gazebo_ros_plugins)/urdf/snippets.xacro"/>  
+  <xacro:include filename="$(find uuv_gazebo_ros_plugins)/urdf/snippets.xacro"/>
   <!-- Loading vehicle's specific macros -->
   <xacro:include filename="$(find lauv_description)/urdf/snippets.xacro"/>
 
@@ -33,7 +33,7 @@
   <xacro:property name="collision_mesh_file" value="file://$(find lauv_description)/meshes/body.stl"/>
 
   <!-- Vehicle macro -->
-  <xacro:macro name="lauv_base" params="namespace *gazebo">
+  <xacro:macro name="lauv_base" params="namespace *gazebo inertial_reference_frame">
 
       <!-- Rigid body description of the base link -->
       <link name="${namespace}/base_link">
