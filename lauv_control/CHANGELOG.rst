@@ -2,8 +2,8 @@
 Changelog for package lauv_control
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+0.1.4 (2018-07-09)
+------------------
 * FIX Configuration of GT controller with NED frame
   Signed-off-by: Musa Morena Marcusso Manhaes <Musa.Marcusso@de.bosch.com>
 * Contributors: Musa Morena Marcusso Manhaes, Musa Morena Marcusso Manhães
