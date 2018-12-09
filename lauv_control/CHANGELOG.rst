@@ -5,15 +5,15 @@ Changelog for package lauv_control
 0.1.4 (2018-07-09)
 ------------------
 * FIX Configuration of GT controller with NED frame
-  Signed-off-by: Musa Morena Marcusso Manhaes <Musa.Marcusso@de.bosch.com>
+  Signed-off-by: Musa Morena Marcusso Manhaes <musa.marcusso@de.bosch.com>
 * Contributors: Musa Morena Marcusso Manhaes, Musa Morena Marcusso Manhães
 
 0.1.3 (2018-07-06)
 ------------------
 * FIX Visualizatin of wrench markers
-  Signed-off-by: Musa Morena Marcusso Manhaes <Musa.Marcusso@de.bosch.com>
+  Signed-off-by: Musa Morena Marcusso Manhaes <musa.marcusso@de.bosch.com>
 * FIX GT controller parameters
-  Signed-off-by: Musa Morena Marcusso Manhaes <Musa.Marcusso@de.bosch.com>
+  Signed-off-by: Musa Morena Marcusso Manhaes <musa.marcusso@de.bosch.com>
 * Contributors: Musa Morena Marcusso Manhaes, Musa Morena Marcusso Manhães
 
 0.1.2 (2018-07-05)

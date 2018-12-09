@@ -8,7 +8,7 @@ Changelog for package lauv_gazebo
 0.1.3 (2018-07-06)
 ------------------
 * ADD GT controller demo launch file
-  Signed-off-by: Musa Morena Marcusso Manhaes <Musa.Marcusso@de.bosch.com>
+  Signed-off-by: Musa Morena Marcusso Manhaes <musa.marcusso@de.bosch.com>
 * Contributors: Musa Morena Marcusso Manhaes, Musa Morena Marcusso Manhães
 
 0.1.2 (2018-07-05)

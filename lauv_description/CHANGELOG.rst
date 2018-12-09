@@ -5,7 +5,7 @@ Changelog for package lauv_description
 0.1.4 (2018-07-09)
 ------------------
 * FIX Upload vehicle with inertial frame world_ned
-Signed-off-by: Musa Morena Marcusso Manhaes <Musa.Marcusso@de.bosch.com>
+Signed-off-by: Musa Morena Marcusso Manhaes <musa.marcusso@de.bosch.com>
 * Contributors: Musa Morena Marcusso Manhaes, Musa Morena Marcusso Manhães
 
 0.1.3 (2018-07-06)
