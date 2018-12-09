@@ -10,9 +10,14 @@
 
   <license>Apache-2.0</license>
 
+  <exec_depend>xacro</exec_depend>
   <exec_depend>uuv_gazebo_ros_plugins</exec_depend>
   <exec_depend>uuv_sensor_ros_plugins</exec_depend>
 
   <buildtool_depend>catkin</buildtool_depend>
+
+  <test_depend>rostest</test_depend>
+  <test_depend>rosunit</test_depend>
+  <test_depend>xacro</test_depend>
 
 </package>
