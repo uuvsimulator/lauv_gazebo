@@ -68,9 +68,11 @@
     </node>
   </group>
 
-  <!-- Publish state and tf for in relation to the world frame -->
-  <include file="$(find uuv_descriptions)/models/common/launch/message_to_tf.launch">
-    	<arg name="namespace" value="$(arg namespace)"/>
+  <!-- publish state and tf for in relation to the world frame -->
+  <include file="$(find uuv_assistants)/launch/message_to_tf.launch">
+    <arg name="namespace" value="$(arg namespace)"/>
+    <arg name="world_frame" value="world"/>
+    <arg name="child_frame_id" value="/$(arg namespace)/base_link"/>
   </include>
 
 </launch>
