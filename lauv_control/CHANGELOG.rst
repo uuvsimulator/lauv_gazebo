@@ -2,6 +2,9 @@
 Changelog for package lauv_control
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+0.1.5 (2019-02-14)
+------------------
+
 0.1.4 (2018-07-09)
 ------------------
 * FIX Configuration of GT controller with NED frame
