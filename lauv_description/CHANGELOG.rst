@@ -2,8 +2,8 @@
 Changelog for package lauv_description
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+0.1.5 (2019-02-14)
+------------------
 * Fix paths and names to plugins after refactor
   Signed-off-by: Musa Morena Marcusso Manhaes <Musa.Marcusso@de.bosch.com>
 * Add test for URDF file consistency
