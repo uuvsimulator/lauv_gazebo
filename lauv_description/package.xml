@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <package format="2">
   <name>lauv_description</name>
-  <version>0.1.5</version>
+  <version>0.1.6</version>
   <description>Robot description files for the LAUV.</description>
 
   <maintainer email="musa.marcusso@de.bosch.com">Musa Morena Marcusso Manhaes</maintainer>
@@ -10,9 +10,17 @@
 
   <license>Apache-2.0</license>
 
+  <exec_depend>uuv_descriptions</exec_depend>
   <exec_depend>uuv_gazebo_ros_plugins</exec_depend>
   <exec_depend>uuv_sensor_ros_plugins</exec_depend>
+  <exec_depend>gazebo_ros</exec_depend>
+  <exec_depend>uuv_assistants</exec_depend>
+  <exec_depend>robot_state_publisher</exec_depend>
+  <exec_depend>xacro</exec_depend>
 
   <buildtool_depend>catkin</buildtool_depend>
 
+  <test_depend>rostest</test_depend>
+  <test_depend>xacro</test_depend>
+  <test_depend>rosunit</test_depend>
 </package>

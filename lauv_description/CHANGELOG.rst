@@ -2,6 +2,16 @@
 Changelog for package lauv_description
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+0.1.6 (2019-04-20)
+------------------
+* Fix package name
+  Signed-off-by: Musa Morena Marcusso Manhães <musa.marcusso@de.bosch.com>
+* Fix test dependencies
+  Signed-off-by: Musa Morena Marcusso Manhães <musa.marcusso@de.bosch.com>
+* Fix URDF consistency test
+  Signed-off-by: Musa Morena Marcusso Manhães <musa.marcusso@de.bosch.com>
+* Contributors: Musa Morena Marcusso Manhães
+
 0.1.5 (2019-02-14)
 ------------------
 * Fix paths and names to plugins after refactor

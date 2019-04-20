@@ -1,5 +1,5 @@
 <launch>
       <test test-name="test_urdf_files" 
-            pkg="uuv_descriptions" 
+            pkg="lauv_description" 
             type="test_urdf_files.py" />
 </launch>
