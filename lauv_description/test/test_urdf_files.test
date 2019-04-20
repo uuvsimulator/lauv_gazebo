@@ -1,5 +1,5 @@
 <launch>
       <test test-name="test_urdf_files" 
-            pkg="uuv_descriptions" 
+            pkg="uuv_plume_simulator" 
             type="test_urdf_files.py" />
 </launch>

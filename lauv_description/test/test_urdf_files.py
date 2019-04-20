@@ -19,7 +19,7 @@ import unittest
 import subprocess
 import os
 
-PKG = 'uuv_descriptions'
+PKG = 'lauv_gazebo'
 NAME = 'test_urdf_files'
 
 import roslib
@@ -31,15 +31,13 @@ def call_xacro(xml_file):
     return subprocess.check_output(['xacro', '--inorder', xml_file])
 
 
-class TestRexROVURDFFiles(unittest.TestCase):
+class TestURDFFiles(unittest.TestCase):
     def test_xacro(self):
         # Retrieve the root folder for the tests
         test_dir = os.path.abspath(os.path.dirname(__file__))
         robots_dir = os.path.join(test_dir, '..', 'robots')
 
         for item in os.listdir(robots_dir):
-            if 'oberon' in item:
-                continue
             if not os.path.isfile(os.path.join(robots_dir, item)):
                 continue
             output = call_xacro(os.path.join(robots_dir, item))
@@ -54,7 +52,7 @@ class TestRexROVURDFFiles(unittest.TestCase):
 
 if __name__ == '__main__':
     import rosunit
-    rosunit.unitrun(PKG, NAME, TestRexROVURDFFiles)
+    rosunit.unitrun(PKG, NAME, TestURDFFiles)
 
 
 
