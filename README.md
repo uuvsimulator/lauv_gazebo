@@ -1,5 +1,13 @@
 # Light Autonomous Underwater Vehicle (LAUV) model for Gazebo
 
+[![Build Status](https://travis-ci.org/uuvsimulator/lauv_gazebo.svg?branch=master)](https://travis-ci.org/uuvsimulator/lauv_gazebo)
+[![GitHub issues](https://img.shields.io/github/issues/uuvsimulator/lauv_gazebo.svg)](https://github.com/uuvsimulator/lauv_gazebo/issues)
+![License](https://img.shields.io/badge/license-Apache%202-blue.svg)
+
+> Link to the `lauv_gazebo` repository [here](https://github.com/uuvsimulator/lauv_gazebo)
+
+> Link to the [documentation page](https://uuvsimulator.github.io/packages/lauv_gazebo/intro/) 
+
 This repository contains the robot description and necessary launch files to
 simulate the [Light Autonomous Underwater Vehicle (LAUV)](http://www.oceanscan-mst.com/), developed by the [Laboratório de Sistemas e Tecnologia Subaquática (LSTS) from Porto University](https://www.lsts.pt/) and [OceanScan-MST](http://www.oceanscan-mst.com/).
 This repository is complementary to the [Unmanned Underwater Vehicle Simulator (UUV Simulator)](https://github.com/uuvsimulator/uuv_simulator),
@@ -12,7 +20,7 @@ sources:
 * [Sousa, Alexandre, et al. "LAUV: The man-portable autonomous underwater vehicle." IFAC Proceedings Volumes 45.5 (2012): 268-274.](https://www.sciencedirect.com/science/article/pii/S1474667016306140)
 * [da Silva, Jorge Estrela, et al. "Modeling and simulation of the LAUV autonomous underwater vehicle." 13th IEEE IFAC International Conference on Methods and Models in Automation and Robotics. Szczecin, Poland Szczecin, Poland, 2007.](http://ave.dee.isep.ipp.pt/~jes/english/publications/mmar07.pdf)
 
-![LAUV](lauv.png)
+![LAUV](images/lauv.png)
 
 ## Purpose of the project
 
@@ -63,9 +71,9 @@ the Gazebo's `.world` file with the following parameters for the physics engine:
 </physics>
 ```
 
-Check the [Mangalia world file](https://github.com/uuvsimulator/uuv_simulator/blob/master/uuv_descriptions/worlds/mangalia.world) to see an example.
+Check the [Mangalia world file](https://github.com/uuvsimulator/uuv_simulator/blob/master/uuv_gazebo_worlds/worlds/mangalia.world) to see an example.
 
 ## License
 
 LAUV Gazebo package is open-sourced under the Apache-2.0 license. See the
-[LICENSE](LICENSE) file for details.
+[LICENSE](https://github.com/uuvsimulator/lauv_gazebo/blob/master/LICENSE) file for details.
