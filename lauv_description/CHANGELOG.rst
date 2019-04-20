@@ -2,8 +2,8 @@
 Changelog for package lauv_description
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+0.1.6 (2019-04-20)
+------------------
 * Fix package name
   Signed-off-by: Musa Morena Marcusso Manhães <musa.marcusso@de.bosch.com>
 * Fix test dependencies
