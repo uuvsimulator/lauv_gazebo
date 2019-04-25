@@ -6,7 +6,9 @@
 
 > Link to the `lauv_gazebo` repository [here](https://github.com/uuvsimulator/lauv_gazebo)
 
-> Link to the [documentation page](https://uuvsimulator.github.io/packages/lauv_gazebo/intro/) 
+> Link to the [documentation page](https://uuvsimulator.github.io/packages/lauv_gazebo/intro/)
+
+> Chat on [Discord](https://discord.gg/zNauF2F)
 
 This repository contains the robot description and necessary launch files to
 simulate the [Light Autonomous Underwater Vehicle (LAUV)](http://www.oceanscan-mst.com/), developed by the [Laboratório de Sistemas e Tecnologia Subaquática (LSTS) from Porto University](https://www.lsts.pt/) and [OceanScan-MST](http://www.oceanscan-mst.com/).
