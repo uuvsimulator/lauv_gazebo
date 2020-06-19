@@ -1,0 +1,3 @@
+- git:
+    uri: https://github.com/uuvsimulator/uuv_simulator.git
+    local-name: uuv_simulator
