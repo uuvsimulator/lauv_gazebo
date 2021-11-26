@@ -37,20 +37,20 @@ standards (e.g. ISO 26262).
 
 ## Requirements
 
-To simulate the Light Autonomous Underwater Vehicle (LAUV), please refer to the [UUV Simulator](https://github.com/uuvsimulator/uuv_simulator)
+To simulate the Light Autonomous Underwater Vehicle (LAUV), please refer to the [Plankton Simulator](https://github.com/Liquid-ai/Plankton)
 repository and follow the installation instructions of the package. Then you can clone
 this package in the `src` folder of you catkin workspace
 
 ```
-cd ~/catkin_ws/src
+cd ~/ros2_ws/src
 git clone https://github.com/uuvsimulator/lauv_gazebo.git
 ```
 
 and then build your catkin workspace
 
 ```bash
-cd ~/catkin_ws
-catkin_make # or <catkin build>, if you are using catkin_tools
+cd ~/ros2_ws
+colcon build
 ```
 
 ## Configuration of the Gazebo world
@@ -73,7 +73,7 @@ the Gazebo's `.world` file with the following parameters for the physics engine:
 </physics>
 ```
 
-Check the [Mangalia world file](https://github.com/uuvsimulator/uuv_simulator/blob/master/uuv_gazebo_worlds/worlds/mangalia.world) to see an example.
+Check the [Mangalia world file](https://github.com/Liquid-ai/Plankton/blob/master/uuv_gazebo_worlds/worlds/mangalia.world) to see an example.
 
 ## License
 
