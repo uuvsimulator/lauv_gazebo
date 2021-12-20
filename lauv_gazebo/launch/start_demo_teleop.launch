@@ -7,16 +7,16 @@
 
   <arg name="joy_id" default="0"/>
 
-  <include file="$(find lauv_description)/launch/upload.launch">
-    <arg name="x" value="$(arg x)"/>
-    <arg name="y" value="$(arg y)"/>
-    <arg name="z" value="$(arg z)"/>
-    <arg name="yaw" value="$(arg yaw)"/>
+  <include file="$(find-pkg-share lauv_description)/launch/upload.py">
+    <arg name="x" value="$(var x)"/>
+    <arg name="y" value="$(var y)"/>
+    <arg name="z" value="$(var z)"/>
+    <arg name="yaw" value="$(var yaw)"/>
   </include>
 
-  <include file="$(find lauv_control)/launch/start_auv_teleop.launch">
-    <arg name="joy_id" default="$(arg joy_id)"/>
-  </include>
+  <!-- <include file="$(find-pkg-share lauv_control)/launch/start_auv_teleop.launch">
+    <arg name="joy_id" default="$(var joy_id)"/>
+  </include> -->
 
-  <node name="rviz" pkg="rviz" type="rviz" output="screen" args="-d $(find lauv_gazebo)/rviz/lauv_teleop.rviz"/>
+  <node name="rviz" pkg="rviz2" exec="rviz2" output="screen" args="-d $(find-pkg-share lauv_control)/rviz/lauv_control.rviz"/>
 </launch>

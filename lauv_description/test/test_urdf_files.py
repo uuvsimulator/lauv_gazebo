@@ -14,21 +14,29 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 from __future__ import print_function
-import rospy
 import unittest
 import subprocess
 import os
 
-PKG = 'lauv_gazebo'
-NAME = 'test_urdf_files'
+import launch_testing.actions
+import launch_testing.markers
+import pytest
 
-import roslib
-roslib.load_manifest(PKG)
+
+from launch import LaunchDescription
+
+
+@pytest.mark.launch_test
+@launch_testing.markers.keep_alive
+def generate_test_description():
+    return LaunchDescription([
+            launch_testing.actions.ReadyToTest(),
+        ])
 
 
 def call_xacro(xml_file):
     assert os.path.isfile(xml_file), 'Invalid XML xacro file'
-    return subprocess.check_output(['xacro', '--inorder', xml_file])
+    return subprocess.check_output(['xacro', xml_file])
 
 
 class TestURDFFiles(unittest.TestCase):
@@ -40,7 +48,7 @@ class TestURDFFiles(unittest.TestCase):
         for item in os.listdir(robots_dir):
             if not os.path.isfile(os.path.join(robots_dir, item)):
                 continue
-            output = call_xacro(os.path.join(robots_dir, item))
+            output = call_xacro(os.path.join(robots_dir, item)).decode("utf-8")
             self.assertNotIn(
                 output, 
                 'XML parsing error',
@@ -49,10 +57,3 @@ class TestURDFFiles(unittest.TestCase):
                 output, 
                 'No such file or directory', 
                 'Some file not found in {}'.format(item))
-
-if __name__ == '__main__':
-    import rosunit
-    rosunit.unitrun(PKG, NAME, TestURDFFiles)
-
-
-

@@ -40,113 +40,113 @@
 
     <!-- This node just reads the trajectory and waypoint topics and publishes
        visualization markers for RViz -->
-    <group if="$(arg gui_on)">
-        <group ns="$(arg uuv_name)">
+    <group if="$(var gui_on)">
+        <group ns="$(var uuv_name)">
             <node pkg="uuv_control_utils"
-                type="trajectory_marker_publisher.py"
+                exec="trajectory_marker_publisher.py"
                 name="trajectory_marker_publisher"
                 output="screen"/>
         </group>
     </group>
 
-    <group ns="$(arg uuv_name)">
+    <group ns="$(var uuv_name)">
       <node pkg="uuv_trajectory_control"
-            type="auv_geometric_tracking_controller.py"
+            exec="auv_geometric_tracking_controller.py"
             name="auv_geometric_tracking_controller"
             output="screen"
-            unless="$(arg use_ned_frame)">
+            unless="$(var use_ned_frame)">
         <remap from="odom" to="pose_gt"/>
         <rosparam subst_value="true">
-            timeout_idle_mode: $(arg timeout_idle_mode)
-            max_forward_speed: $(arg max_forward_speed)
+            timeout_idle_mode: $(var timeout_idle_mode)
+            max_forward_speed: $(var max_forward_speed)
             base_link: base_link
             is_underactuated: true
-            stamped_pose_only: $(arg stamped_pose_only)
+            stamped_pose_only: $(var stamped_pose_only)
             inertial_frame_id: world
-            min_thrust: $(arg min_thrust)
-            max_thrust: $(arg max_thrust)
-            thruster_topic: $(arg thruster_topic)
-            thrust_p_gain: $(arg thrust_p_gain)
-            thrust_d_gain: $(arg thrust_d_gain)
-            p_roll: $(arg p_roll)
-            p_pitch: $(arg p_pitch)
-            d_pitch: $(arg d_pitch)
-            p_yaw: $(arg p_yaw)
-            d_yaw: $(arg d_yaw)
-            n_fins: $(arg n_fins)
-            map_roll: [$(arg map_roll)]
-            map_pitch: [$(arg map_pitch)]
-            map_yaw: [$(arg map_yaw)]
-            fin_topic_prefix: $(arg fin_topic_prefix)
-            fin_topic_suffix: $(arg fin_topic_suffix)
-            max_fin_angle: $(arg max_fin_angle)
-            idle_radius: $(arg idle_radius)
-            look_ahead_delay: $(arg look_ahead_delay)
-            desired_pitch_limit: $(arg desired_pitch_limit)
-            yaw_error_limit: $(arg yaw_error_limit)
+            min_thrust: $(var min_thrust)
+            max_thrust: $(var max_thrust)
+            thruster_topic: $(var thruster_topic)
+            thrust_p_gain: $(var thrust_p_gain)
+            thrust_d_gain: $(var thrust_d_gain)
+            p_roll: $(var p_roll)
+            p_pitch: $(var p_pitch)
+            d_pitch: $(var d_pitch)
+            p_yaw: $(var p_yaw)
+            d_yaw: $(var d_yaw)
+            n_fins: $(var n_fins)
+            map_roll: [$(var map_roll)]
+            map_pitch: [$(var map_pitch)]
+            map_yaw: [$(var map_yaw)]
+            fin_topic_prefix: $(var fin_topic_prefix)
+            fin_topic_suffix: $(var fin_topic_suffix)
+            max_fin_angle: $(var max_fin_angle)
+            idle_radius: $(var idle_radius)
+            look_ahead_delay: $(var look_ahead_delay)
+            desired_pitch_limit: $(var desired_pitch_limit)
+            yaw_error_limit: $(var yaw_error_limit)
             dubins:
-                radius: $(arg dubins_radius)
-                max_pitch: $(arg dubins_max_pitch)
+                radius: $(var dubins_radius)
+                max_pitch: $(var dubins_max_pitch)
             lipb:
-                radius: $(arg dubins_radius)
+                radius: $(var dubins_radius)
             thruster_config:
-                topic_prefix: $(arg thruster_topic_prefix)
-                topic_suffix: $(arg thruster_topic_suffix)
-                frame_base: $(arg thruster_frame_base)
-                max_thrust: $(arg max_thrust)
-                conversion_fcn: $(arg thruster_conversion_fcn)
+                topic_prefix: $(var thruster_topic_prefix)
+                topic_suffix: $(var thruster_topic_suffix)
+                frame_base: $(var thruster_frame_base)
+                max_thrust: $(var max_thrust)
+                conversion_fcn: $(var thruster_conversion_fcn)
                 conversion_fcn_params:
-                    gain: $(arg thruster_gain)
+                    gain: $(var thruster_gain)
         </rosparam>
       </node>
 
       <node pkg="uuv_trajectory_control"
-            type="auv_geometric_tracking_controller.py"
+            exec="auv_geometric_tracking_controller.py"
             name="auv_geometric_tracking_controller"
             output="screen"
-            if="$(arg use_ned_frame)">
+            if="$(var use_ned_frame)">
         <remap from="odom" to="pose_gt_ned"/>
         <rosparam subst_value="true">
-            timeout_idle_mode: $(arg timeout_idle_mode)
-            max_forward_speed: $(arg max_forward_speed)
+            timeout_idle_mode: $(var timeout_idle_mode)
+            max_forward_speed: $(var max_forward_speed)
             base_link: base_link
             is_underactuated: true
-            stamped_pose_only: $(arg stamped_pose_only)
+            stamped_pose_only: $(var stamped_pose_only)
             inertial_frame_id: world_ned
-            min_thrust: $(arg min_thrust)
-            max_thrust: $(arg max_thrust)
-            thruster_topic: $(arg thruster_topic)
-            thrust_p_gain: $(arg thrust_p_gain)
-            thrust_d_gain: $(arg thrust_d_gain)
-            p_roll: $(arg p_roll)
-            p_pitch: $(arg p_pitch)
-            d_pitch: $(arg d_pitch)
-            p_yaw: $(arg p_yaw)
-            d_yaw: $(arg d_yaw)
-            n_fins: $(arg n_fins)
-            map_roll: [$(arg map_roll)]
-            map_pitch: [$(arg map_pitch)]
-            map_yaw: [$(arg map_yaw)]
-            fin_topic_prefix: $(arg fin_topic_prefix)
-            fin_topic_suffix: $(arg fin_topic_suffix)
-            max_fin_angle: $(arg max_fin_angle)
-            idle_radius: $(arg idle_radius)
-            look_ahead_delay: $(arg look_ahead_delay)
-            desired_pitch_limit: $(arg desired_pitch_limit)
-            yaw_error_limit: $(arg yaw_error_limit)
+            min_thrust: $(var min_thrust)
+            max_thrust: $(var max_thrust)
+            thruster_topic: $(var thruster_topic)
+            thrust_p_gain: $(var thrust_p_gain)
+            thrust_d_gain: $(var thrust_d_gain)
+            p_roll: $(var p_roll)
+            p_pitch: $(var p_pitch)
+            d_pitch: $(var d_pitch)
+            p_yaw: $(var p_yaw)
+            d_yaw: $(var d_yaw)
+            n_fins: $(var n_fins)
+            map_roll: [$(var map_roll)]
+            map_pitch: [$(var map_pitch)]
+            map_yaw: [$(var map_yaw)]
+            fin_topic_prefix: $(var fin_topic_prefix)
+            fin_topic_suffix: $(var fin_topic_suffix)
+            max_fin_angle: $(var max_fin_angle)
+            idle_radius: $(var idle_radius)
+            look_ahead_delay: $(var look_ahead_delay)
+            desired_pitch_limit: $(var desired_pitch_limit)
+            yaw_error_limit: $(var yaw_error_limit)
             dubins:
-                radius: $(arg dubins_radius)
-                max_pitch: $(arg dubins_max_pitch)
+                radius: $(var dubins_radius)
+                max_pitch: $(var dubins_max_pitch)
             lipb:
-                radius: $(arg dubins_radius)
+                radius: $(var dubins_radius)
             thruster_config:
-                topic_prefix: $(arg thruster_topic_prefix)
-                topic_suffix: $(arg thruster_topic_suffix)
-                frame_base: $(arg thruster_frame_base)
-                max_thrust: $(arg max_thrust)
-                conversion_fcn: $(arg thruster_conversion_fcn)
+                topic_prefix: $(var thruster_topic_prefix)
+                topic_suffix: $(var thruster_topic_suffix)
+                frame_base: $(var thruster_frame_base)
+                max_thrust: $(var max_thrust)
+                conversion_fcn: $(var thruster_conversion_fcn)
                 conversion_fcn_params:
-                    gain: $(arg thruster_gain)
+                    gain: $(var thruster_gain)
         </rosparam>
       </node>
     </group>

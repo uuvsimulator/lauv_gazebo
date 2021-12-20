@@ -2,9 +2,9 @@
   <arg name="uuv_name" default="lauv"/>
   <arg name="joy_id" default="0"/>
 
-  <include file="$(find uuv_teleop)/launch/finned_uuv_teleop.launch">
-    <arg name="uuv_name" value="$(arg uuv_name)"/>
-    <arg name="joy_id" value="$(arg joy_id)"/>
+  <include file="$(find-pkg-share uuv_teleop)/launch/finned_uuv_teleop.launch">
+    <arg name="uuv_name" value="$(var uuv_name)"/>
+    <arg name="joy_id" value="$(var joy_id)"/>
     <arg name="gain_roll" value="0,0,0,0"/>
     <arg name="gain_pitch" value="0,1,0,-1"/>
     <arg name="gain_yaw" value="-1,0,1,0"/>

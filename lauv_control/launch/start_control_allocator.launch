@@ -1,7 +1,7 @@
 <launch>
-    <include file="$(find uuv_auv_control_allocator)/launch/start_control_allocator.launch">        
+    <include file="$(find-pkg-share uuv_auv_control_allocator)/launch/start_control_allocator.launch">        
         <arg name="uuv_name" value="lauv"/>
-        <arg name="output_dir" value="$(find lauv_control)/config"/>
+        <arg name="output_dir" value="$(find-pkg-share lauv_control)/config"/>
         <arg name="base_link" value="base_link"/>
         <arg name="max_thrust" value="20"/>
         <arg name="thruster_conversion_fcn" value="proportional"/>

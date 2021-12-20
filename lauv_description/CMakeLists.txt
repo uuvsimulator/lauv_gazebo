@@ -1,21 +1,22 @@
-cmake_minimum_required(VERSION 2.8.3)
+cmake_minimum_required(VERSION 3.5)
 project(lauv_description)
 
-find_package(catkin REQUIRED)
+find_package(ament_cmake REQUIRED)
 
-catkin_package()
 
 install(DIRECTORY launch meshes robots urdf
-        DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}
+        DESTINATION share/${PROJECT_NAME}
         PATTERN "*~" EXCLUDE)
 
-if(CATKIN_ENABLE_TESTING)
-  find_package(rostest REQUIRED)
+if(BUILD_TESTING)
+  find_package(launch_testing_ament_cmake REQUIRED)
   find_package(xacro REQUIRED)
-  find_package(rosunit REQUIRED)
+
   foreach(T
-      test/test_urdf_files.test
+      test/test_urdf_files.py
       )
-     add_rostest(${T})
+    add_launch_test(${T})
   endforeach()
 endif()
+
+ament_package()

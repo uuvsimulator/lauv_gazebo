@@ -20,14 +20,14 @@
     <arg name="Ki" default="0.0010232768152540483,0.0010232768152540483,0.0010232768152540483,0,0.11901644069756079,0.11901644069756079"/>
     <arg name="slope" default="0.9903858668992097,0.9903858668992097,0.9903858668992097,0,0.20796465986893387,0.20796465986893387"/>
 
-    <include file="$(find lauv_control)/launch/start_control_allocator.launch"/>
+    <include file="$(find-pkg-share lauv_control)/launch/start_control_allocator.launch"/>
 
-    <group ns="$(arg uuv_name)">
+    <group ns="$(var uuv_name)">
       <node pkg="uuv_trajectory_control"
-            type="rov_nmb_sm_controller.py"
+            exec="rov_nmb_sm_controller.py"
             name="rov_nmb_sm_controller"
             output="screen"
-            if="$(arg use_ned_frame)">
+            if="$(var use_ned_frame)">
         <!-- Remap necessary topics -->
         <remap from="odom" to="pose_gt_ned"/>
         <remap from="thruster_output" to="thruster_manager/input_stamped"/>
@@ -36,24 +36,24 @@
         <rosparam subst_value="true">
           saturation: 20
           thrusters_only: false
-          Kd: [$(arg Kd)]
-          Ki: [$(arg Ki)]
-          slope: [$(arg slope)]
+          Kd: [$(var Kd)]
+          Ki: [$(var Ki)]
+          slope: [$(var slope)]
           inertial_frame_id: world_ned
-          max_forward_speed: $(arg max_forward_speed)
+          max_forward_speed: $(var max_forward_speed)
           use_stamped_poses_only: false
-          look_ahead_delay: $(arg look_ahead_delay)
+          look_ahead_delay: $(var look_ahead_delay)
           dubins: 
-            radius: $(arg dubins_radius)
-            max_pitch: $(arg dubins_max_pitch)
+            radius: $(var dubins_radius)
+            max_pitch: $(var dubins_max_pitch)
         </rosparam>
       </node>
 
       <node pkg="uuv_trajectory_control"
-            type="rov_nmb_sm_controller.py"
+            exec="rov_nmb_sm_controller.py"
             name="rov_nmb_sm_controller"
             output="screen"
-            unless="$(arg use_ned_frame)">
+            unless="$(var use_ned_frame)">
         <!-- Remap necessary topics -->
         <remap from="odom" to="pose_gt"/>
         <remap from="thruster_output" to="thruster_manager/input_stamped"/>
@@ -62,16 +62,16 @@
         <rosparam subst_value="true">
           saturation: 20
           thrusters_only: false
-          Kd: [$(arg Kd)]
-          Ki: [$(arg Ki)]
-          slope: [$(arg slope)]
+          Kd: [$(var Kd)]
+          Ki: [$(var Ki)]
+          slope: [$(var slope)]
           inertial_frame_id: world
-          max_forward_speed: $(arg max_forward_speed)
+          max_forward_speed: $(var max_forward_speed)
           use_stamped_poses_only: false
-          look_ahead_delay: $(arg look_ahead_delay)
+          look_ahead_delay: $(var look_ahead_delay)
           dubins: 
-            radius: $(arg dubins_radius)
-            max_pitch: $(arg dubins_max_pitch)
+            radius: $(var dubins_radius)
+            max_pitch: $(var dubins_max_pitch)
         </rosparam>
       </node>
     </group>    
