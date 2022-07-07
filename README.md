@@ -3,6 +3,7 @@
 [![Build Status](https://travis-ci.org/uuvsimulator/lauv_gazebo.svg?branch=master)](https://travis-ci.org/uuvsimulator/lauv_gazebo)
 [![GitHub issues](https://img.shields.io/github/issues/uuvsimulator/lauv_gazebo.svg)](https://github.com/uuvsimulator/lauv_gazebo/issues)
 ![License](https://img.shields.io/badge/license-Apache%202-blue.svg)
+[![Chat](https://img.shields.io/discord/870113194289532969.svg?style=flat-square&colorB=758ED3)](https://discord.gg/vq8PkDb2TC)
 
 > Link to the `lauv_gazebo` repository [here](https://github.com/uuvsimulator/lauv_gazebo)
 
